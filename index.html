@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Що скаже JavaScript?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">JS • Порівняння</p>
+        <h1>Що скаже JavaScript?</h1>
+      </div>
+      <div class="round-badge" id="roundBadge">1 / 10</div>
+    </header>
+
+    <section class="stage" aria-live="polite">
+      <div class="question-card">
+        <div class="question-label">СПРОГНОЗУЙ РЕЗУЛЬТАТ</div>
+
+        <!-- Оператор уже є у виразі. Учень визначає лише true або false. -->
+        <div class="expression expression-complete" id="expression"></div>
+
+        <p class="prompt" id="prompt">
+          Який результат поверне JavaScript?
+        </p>
+
+        <div class="vote-panel">
+          <span>Твоя відповідь:</span>
+          <div class="vote-actions">
+            <button class="vote true-vote" data-vote="true">TRUE</button>
+            <button class="vote false-vote" data-vote="false">FALSE</button>
+          </div>
+        </div>
+
+        <button class="check-btn" id="checkBtn" disabled>Перевірити</button>
+
+        <div class="result" id="result" hidden>
+          <div class="result-word" id="resultWord">TRUE</div>
+          <p id="explanation"></p>
+        </div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="panel-card">
+          <span class="panel-kicker">Ланцюг уваги</span>
+          <ol>
+            <li>Прочитай вираз</li>
+            <li>Обчисли значення, якщо потрібно</li>
+            <li>Подивись на оператор</li>
+            <li>Спрогнозуй: <strong>true</strong> чи <strong>false</strong></li>
+            <li>Перевір результат</li>
+          </ol>
+        </div>
+
+        <div class="panel-card compact">
+          <span class="panel-kicker">Пам'ятай</span>
+          <p><code>&gt; &lt; &gt;= &lt;=</code> порівнюють величини.</p>
+          <p><code>===</code> перевіряє і значення, і тип.</p>
+          <p><code>!==</code> повертає <strong>true</strong>, якщо значення або тип відрізняються.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="controls">
+      <button class="secondary" id="prevBtn">← Попереднє</button>
+      <button class="secondary" id="randomBtn">Випадкове завдання</button>
+      <button class="primary" id="nextBtn">Наступне →</button>
+    </footer>
+  </main>
+
+  <div class="paradox-overlay" id="paradoxOverlay" hidden>
+    <div class="paradox-card">
+      <p class="eyebrow">НЕ КОД</p>
+      <h2>Я хочу змін — і боюся змін.</h2>
+      <p>У JavaScript конкретне порівняння повертає <strong>true</strong> або <strong>false</strong>.</p>
+      <div class="disabled-choice">
+        <span>TRUE</span>
+        <span>FALSE</span>
+      </div>
+      <p class="paradox-question">А людині завжди достатньо лише одного з двох?</p>
+      <button id="closeParadox">Повернутися до завдань</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
